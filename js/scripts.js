@@ -1,32 +1,32 @@
   var repository= [
   {
-    name:'Ivysaur',
+    name:"Ivysaur",
     weight:13,
     height:1,
-    type:'grass','poison'
+    type:["grass","poison"]
   },
   {
-    name:'Charmander',
+    name:["Charmander"],
     weight:8.5,
     height:0.6,
-    type:'fire'
+    type:["fire"]
   },
   {
-    name:'Squirtle',
+    name:"Squirtle",
     weight:9,
     height:0.5,
-    type:'water'
+    type:["water"]
   },
   {
-    name:'Caterpie',
+    name:"Caterpie",
     weight:2.9,
     height:0.3,
-    type:'bug'
+    type:["bug"]
   },
   {
-    name:'Raticate',
+    name:"Raticate",
     weight:18.5,
     height:0.7,
-    type:'normal'
-  },
+    type:["normal"]
+  }
   ];
