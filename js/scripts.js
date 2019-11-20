@@ -6,7 +6,7 @@
     type:["grass","poison"]
   },
   {
-    name:["Charmander"],
+    name:"Charmander",
     weight:8.5,
     height:0.6,
     type:["fire"]
