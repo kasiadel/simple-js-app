@@ -37,10 +37,10 @@
   {
   if (repository[i].height < 0.8)
     {
-      document.write(repository[i].name + "(" + repository[i].height +")" +"<br/>");
+      document.write(repository[i].name + "(" + repository[i].height +")" +"<br>");
   }
   else
   {
-    document.write(repository[i].name + "(" + repository[i].height +")" +"-" + "Wow, that's big!"+"<br/>")
+    document.write(repository[i].name + "(" + repository[i].height +")" +"-" + "Wow, that's big!"+"<br>")
   }
 }
