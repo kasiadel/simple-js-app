@@ -47,6 +47,6 @@
   }
 }*/
 
-Object.keys(repository).forEach(function(property){
-document.write(repository[property] +"</br>");
+repository.forEach(function(pokemon){
+document.write(pokemon.name +"</br>");
 });
