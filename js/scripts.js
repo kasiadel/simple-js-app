@@ -29,18 +29,24 @@
       height:0.7,
       type:["normal"]
     }
-  ]
+  ];
 
 
-  for(i=0; i< repository.length;
+
+
+ /*for(i=0; i< repository.length;
      i++)
   {
   if (repository[i].height < 0.8)
     {
-      document.write(repository[i].name + "(" + repository[i].height +")" +"<br>");
+      document.write("<p>" + repository[i].name + "  " + "(" + "Height" + ":" + repository[i].height +")" + "</p>");
   }
   else
   {
-    document.write(repository[i].name + "(" + repository[i].height +")" +"-" + "Wow, that's big!"+"<br>")
+    document.write("<p>"+ repository[i].name + "  " +  "(" + "Height" + ":"  + repository[i].height +")" + " " + "-" + "Wow, that's big!"+"</p>")
   }
-}
+}*/
+
+Object.keys(repository).forEach(function(property){
+document.write(repository[property] +"</br>");
+});
