@@ -48,5 +48,5 @@
 }*/
 
 repository.forEach(function(pokemon){
-document.write(pokemon.name +"</br>");
+document.write(pokemon.name + "</br>");
 });
