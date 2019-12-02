@@ -53,6 +53,6 @@ pokemonRepository.add({ name: "Pidgeot" });
 
 
 
-pokemonRepository.forEach(function(repository){
+pokemonRepository.getAll().forEach(function(repository){
 document.write((repository.name) + "</br>");
 });
