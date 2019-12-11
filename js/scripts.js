@@ -41,18 +41,29 @@ var pokemonRepository = function(){
     function getAll() {
       return repository;
     }
-
     return {
         add: add,
-        getAll: getAll
+        getAll: getAll,
+      //  addListItem: addListItem
   };
-}();
+  //function addListItem(pokemon){
 
+
+
+
+}();
 console.log(pokemonRepository.getAll());
 pokemonRepository.add({ name: "Pidgeot" });
+var ul = document.querySelector(".pokemonList");
+var button = document.createElement("button");
+var li = document.createElement("li");
+button.innerText = "Ivysaur";
+li.appendChild(button);
+ul.appendChild(li);
+button.classList.add("myButton");
 
 
 
-pokemonRepository.getAll().forEach(function(repository){
-document.write((repository.name) + "</br>");
-});
+//pokemonRepository.addListItem(pokemon).forEach(function(repository){
+//return(repository.name);
+//});
