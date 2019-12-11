@@ -1,5 +1,5 @@
 var pokemonRepository = function(){
-
+​
   var repository= [
     {
       name:"Ivysaur",
@@ -32,11 +32,11 @@ var pokemonRepository = function(){
       type:["normal"]
     }
   ];
-
-
-
-
-
+​
+​
+​
+​
+​
     function addListItem(pokemon){
       var button = document.createElement("button");
       var li = document.createElement("li");
@@ -45,27 +45,26 @@ var pokemonRepository = function(){
       li.appendChild(button);
       ul.appendChild(li);
       };
-
+​
       function add(pokemon) {
          repository.push(pokemon);
       }
        function getAll() {
          return repository;
        }
-
+​
     return {
         add: add,
         getAll: getAll,
        addListItem: addListItem
-
+​
 };
-();
+}();
 //console.log(pokemonRepository.getAll());
 //pokemonRepository.add({ name: "Pidgeot" });
 var ul = document.querySelector(".pokemon-list");
-
-
+​
+​
 pokemonRepository.getAll().forEach(function(repository){
   addListItem
 });
-}
