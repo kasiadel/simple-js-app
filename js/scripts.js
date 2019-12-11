@@ -35,35 +35,37 @@ var pokemonRepository = function(){
 
 
 
-   function add(pokemon) {
-      repository.push(pokemon);
-  }
-    function getAll() {
-      return repository;
-    }
+
+
+    function addListItem(pokemon){
+      var button = document.createElement("button");
+      var li = document.createElement("li");
+      button.innerText = repository.name;
+      button.classList.add("my-button");
+      li.appendChild(button);
+      ul.appendChild(li);
+      };
+
+      function add(pokemon) {
+         repository.push(pokemon);
+      }
+       function getAll() {
+         return repository;
+       }
+
     return {
         add: add,
         getAll: getAll,
-      //  addListItem: addListItem
-  };
-  //function addListItem(pokemon){
+       addListItem: addListItem
+
+};
+();
+//console.log(pokemonRepository.getAll());
+//pokemonRepository.add({ name: "Pidgeot" });
+var ul = document.querySelector(".pokemon-list");
 
 
-
-
-}();
-console.log(pokemonRepository.getAll());
-pokemonRepository.add({ name: "Pidgeot" });
-var ul = document.querySelector(".pokemonList");
-var button = document.createElement("button");
-var li = document.createElement("li");
-button.innerText = "Ivysaur";
-li.appendChild(button);
-ul.appendChild(li);
-button.classList.add("myButton");
-
-
-
-//pokemonRepository.addListItem(pokemon).forEach(function(repository){
-//return(repository.name);
-//});
+pokemonRepository.getAll().forEach(function(repository){
+  addListItem
+});
+}
