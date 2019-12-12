@@ -39,8 +39,10 @@ var pokemonRepository = function(){
       button.classList.add("my-button");
       li.appendChild(button);
       ul.appendChild(li);
-      button.addEventListener("click",showDetails(repository.name));
-      }
+      button.addEventListener("click",function(event){
+        showDetails(repository.name);
+      });
+    }
 
     function showDetails(repository){
     console.log(repository);
@@ -58,7 +60,8 @@ var pokemonRepository = function(){
        addListItem: addListItem
 
 };
-}();
+}
+();
 //console.log(pokemonRepository.getAll());
 //pokemonRepository.add({ name: "Pidgeot" });
 var ul = document.querySelector(".pokemon-list");
