@@ -55,7 +55,7 @@ var pokemonRepository =(function(){
   }
 
   function showDetails(repository){
-  pokemon.loadDetails(repository).then(function(){
+  pokemonRepository.loadDetails(repository).then(function(){
     console.log(repository);
   });
 }
