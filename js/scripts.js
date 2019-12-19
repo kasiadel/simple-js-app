@@ -1,29 +1,27 @@
 var pokemonRepository =(function(){
   var repository= [];
   var apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+  var ul = document.querySelector(".pokemon-list");
 
-  function addListItem(repository){
-  var button = document.createElement("button");
-  var li = document.createElement("li");
-  button.innerText = repository.name;
-  button.classList.add("my-button");
-  li.appendChild(button);
-  ul.appendChild(li);
-  button.addEventListener("click",function(event){
-  showDetails(repository.name);
-    });
-  }
-
-  function showDetails(repository){
-  console.log(repository);
-    }
   function add(pokemon) {
   repository.push(pokemon);
-    }
+  }
+
   function getAll() {
   return repository;
-    }
+ }
 
+    function addListItem(pokemon){
+    var button = document.createElement("button");
+    var li = document.createElement("li");
+    button.innerText = repository.name;
+    button.classList.add("my-button");
+    li.appendChild(button);
+    ul.appendChild(li);
+    button.addEventListener("click",function(event){
+    showDetails(repository);
+  });
+}
 
   function loadList() {
       return fetch(apiUrl).then(function (response) {
@@ -36,8 +34,9 @@ var pokemonRepository =(function(){
     };
       add(pokemon);
     });
-  }).catch(function (e) {
-    console.error(e);
+  })
+  .catch(function (error) {
+    console.error(error);
   });
 }
 
@@ -50,39 +49,27 @@ var pokemonRepository =(function(){
       item.imageUrl = details.sprites.front_default;
       item.height = details.height;
       item.types = Object.keys(details.types);
-    }).catch(function (e) {
-      console.error(e);
+    }).catch(function (error) {
+      console.error(error);
     });
   }
 
-
+  function showDetails(repository){
+  pokemon.loadDetails(repository).then(function(){
+    console.log(repository);
+  });
 
     return {
     add: add,
     getAll: getAll,
-    search:search,
     addListItem: addListItem,
     loadList: loadList,
     loadDetails: loadDetails
-  };
+};
 })();
 
-pokemonRepository.loadList(pokemon).then(function() {
+ pokemonRepository.loadList().then(function() {
   pokemonRepository.getAll().forEach(function(pokemon){
-   addListItem(pokemon);
+   pokemonRepository.addListItem(repository);
      });
-    });
-
-function showDetails(item) {
-pokemonRepository.loadDetails(item).then(function() {
-console.log(item);
- });
-}
-
-
-
-var ul = document.querySelector(".pokemon-list");
-
-pokemonRepository.getAll().forEach(function(repository){
-pokemonRepository.addListItem(repository);
- });
+  });
